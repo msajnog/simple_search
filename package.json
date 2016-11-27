@@ -1,0 +1,15 @@
+{
+  "name": "simple-search",
+  "version": "1.0.0",
+  "author": "Mateusz Sajnóg",
+  "description": "Wikipedia simple search",
+  "scripts": {
+    "server": "node node_modules/mock-rest-api/bin/index.js",
+    "start": "http-server app"
+  },
+  "dependencies": {
+    "angular-route": "^1.5.9",
+    "http-server": "^0.9.0"
+  },
+  "devDependencies": {}
+}

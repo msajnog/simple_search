@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/results.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.11/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.11/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.11/angular-touch.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.11/angular-animate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/constants.js"></script>
+        <script src="scripts/controllers/headerCtrl.js"></script>
+        <script src="scripts/controllers/resultsCtrl.js"></script>
+        <script src="scripts/services/searchKeyService.js"></script>
+        <script src="scripts/services/searchService.js"></script>
+    </head>
+    <body ng-app="simpleSearchApp">
+      <div id="page">
+        <header class="header" ng-controller="HeaderCtrl">
+          <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Simple Search</a>
+              </div>
+
+              <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed" ng-submit="dataSearch(searchKey)">
+                <form id="topSearchForm" name="topSearchForm" class="navbar-form" novalidate>
+                  <div class="form-group" ng-class="{'has-error': topSearchForm.searchKey.$invalid && !topSearchForm.searchKey.$pristine}">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search" name="searchKey" ng-model="searchKey" required>
+                      <div class="input-group-btn">
+                        <button type="submit" class="btn btn-primary" ng-disabled="!searchKey.length">Search</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+        <div class="container">
+          <div ng-view=""></div>
+        </div>
+      </div>
+    </body>
+</html>
