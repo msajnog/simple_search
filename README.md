@@ -2,10 +2,12 @@
 
 # Requirements
 
-Node.js and npm (https://nodejs.org/)
+Node.js (v4.6.0) and npm (https://nodejs.org/)
 
 http-server (https://www.npmjs.com/package/http-server)
 `npm install -g http-server`
+
+Install dependencies by running `npm install`
 
 ## Start
 
