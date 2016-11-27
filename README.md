@@ -9,4 +9,4 @@ http-server (https://www.npmjs.com/package/http-server)
 
 ## Start
 
-Go to root folder and run `npm start`
+Go to root folder and run `npm start` then in your browser go to `http://localhost:8080`
